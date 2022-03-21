@@ -31,7 +31,6 @@ desc = "基于乐谱预训练的文本生成系统 "
 st.title('基于乐谱预训练的文本生成系统')
 st.write(desc)
 
-num_sentences = st.number_input('Number of Sentences', min_value=1, max_value=20, value=5)
 user_input = st.text_input('Seed Text (can leave blank)')
 
 
