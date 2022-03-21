@@ -26,15 +26,15 @@ net.eval()
 #===========================================#
 #              Streamlit Code               #
 #===========================================#
-desc = "Uses an LSTM neural network trained on *The Lord of the Rings*. Check out the code [here](https://github.com/christian-doucette/tolkein_text)!"
+desc = "基于乐谱预训练的文本生成系统 "
 
-st.title('Lord of the Rings Text Generator')
+st.title('基于乐谱预训练的文本生成系统')
 st.write(desc)
 
 num_sentences = st.number_input('Number of Sentences', min_value=1, max_value=20, value=5)
 user_input = st.text_input('Seed Text (can leave blank)')
 
 
-if st.button('Generate Text'):
+if st.button('文本生成'):
     generated_text = generate_text.prediction(net, word_to_id, id_to_word, always_capitalized, user_input, 9, num_sentences)
     st.write(generated_text)
