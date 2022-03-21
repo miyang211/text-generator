@@ -33,7 +33,7 @@ st.write(desc)
 
 user_input = st.text_input('Seed Text (can leave blank)')
 
-
+num_sentences = st.number_input('输入词的数量',value=1)
 if st.button('文本生成'):
     generated_text = generate_text.prediction(net, word_to_id, id_to_word, always_capitalized, user_input, 9, num_sentences)
     st.write(generated_text)
