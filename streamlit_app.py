@@ -26,14 +26,14 @@ net.eval()
 #===========================================#
 #              Streamlit Code               #
 #===========================================#
-
+desc = "Generating sequential data is the closest computers get to dreaming! "
 st.title('基于乐谱预训练语言模型的文本生成系统')
 st.write(desc)
 
-num_sentences = st.number_input('Number of Sentences', min_value=1, max_value=20, value=5)
-user_input = st.text_input('Seed Text (can leave blank)')
+num_sentences = st.number_input('生成句子数量', min_value=1, max_value=20, value=5)
+user_input = st.text_input('输入文本')
 
 
-if st.button('Generate Text'):
+if st.button('生成文本'):
     generated_text = generate_text.prediction(net, word_to_id, id_to_word, always_capitalized, user_input, 9, num_sentences)
     st.write(generated_text)
